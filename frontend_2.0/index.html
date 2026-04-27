@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>简历大师</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">✦</span>
+          简历大师
+        </div>
+        <div class="badge">AI 定制 · 真实性约束</div>
+      </header>
+
+      <section class="hero">
+        <h1>JD + 简历 → 一键定制</h1>
+        <p>基于目标岗位提取关键词，重构经历表述，控制字符与条数预算，生成专属定制版。</p>
+      </section>
+
+      <section class="layout-grid">
+        <form id="resumeForm" class="panel-input">
+          <div class="panel-header">
+            <span class="panel-dot"></span>
+            <h2>输入</h2>
+          </div>
+
+          <label class="field">
+            <span class="field-label">岗位描述（JD）</span>
+            <textarea
+              id="jdText"
+              rows="7"
+              placeholder="粘贴目标岗位的完整描述，包含职责和要求…"
+              aria-label="岗位描述文本"
+            ></textarea>
+            <div id="jdPasteZone" class="drop-zone" tabindex="0" aria-label="粘贴JD截图区域">
+              在此区域按 Ctrl+V 粘贴 JD 截图（云端 AI OCR）
+            </div>
+          </label>
+
+          <label class="field">
+            <span class="field-label">原始简历</span>
+            <textarea
+              id="resumeText"
+              rows="10"
+              placeholder="粘贴你的完整简历文本，建议包含工作经历、项目经历和技能列表…"
+              aria-label="原始简历文本"
+            ></textarea>
+            <div id="resumeDropZone" class="drop-zone" tabindex="0" aria-label="拖拽简历文件区域">
+              拖拽简历文件到这里（支持 txt / md / docx / pdf）
+            </div>
+            <input id="resumeFileInput" type="file" accept=".txt,.md,.docx,.pdf" hidden />
+            <button type="button" id="pickResumeBtn" class="btn btn-ghost btn-inline">选择简历文件</button>
+          </label>
+
+          <div class="budget-grid">
+            <label class="field field--sm">
+              <span class="field-label">总条数</span>
+              <input id="budgetBullets" type="number" value="10" min="4" max="20" aria-label="总条数预算" />
+            </label>
+            <label class="field field--sm">
+              <span class="field-label">总字符</span>
+              <input id="budgetChars" type="number" value="900" min="300" max="2000" aria-label="总字符预算" />
+            </label>
+            <label class="field field--sm">
+              <span class="field-label">每行字符</span>
+              <input id="lineChars" type="number" value="38" min="20" max="60" aria-label="每行最大字符数" />
+            </label>
+            <label class="field field--sm">
+              <span class="field-label">每条行数</span>
+              <input id="lineCount" type="number" value="2" min="1" max="3" aria-label="每条最大行数" />
+            </label>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn btn-primary">生成结果</button>
+            <label class="field field--sm export-format">
+              <span class="field-label">导出格式</span>
+              <select id="exportFormat" aria-label="导出格式">
+                <option value="json" selected>JSON</option>
+                <option value="md">Markdown</option>
+                <option value="html">HTML</option>
+                <option value="pdf">PDF</option>
+              </select>
+            </label>
+            <button type="button" id="copyBtn" class="btn btn-ghost">
+              复制 JSON
+            </button>
+            <button type="button" id="downloadBtn" class="btn btn-ghost">
+              下载文件
+            </button>
+          </div>
+          <p class="hint">默认请求本地 Python API；截图识别走云端模型（需配置 API Key）。</p>
+        </form>
+
+        <section class="panel-output">
+          <div class="panel-header">
+            <span class="panel-dot panel-dot--accent"></span>
+            <h2>输出</h2>
+            <span id="statusTag" class="status-tag">待生成</span>
+          </div>
+          <pre id="outputBox" aria-label="生成的简历 JSON 输出">{}</pre>
+        </section>
+      </section>
+
+      <footer class="footer">
+        <span>简历大师</span>
+        <span class="footer-sep">·</span>
+        <span>真实性约束 · 动宾结构 · 数字化结果</span>
+      </footer>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

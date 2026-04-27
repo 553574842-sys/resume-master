@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "requires_clarification": true,
+    "clarification_questions": [
+      "请补充可量化结果：开发企业知识库问答系统，使用Python与FastAPI完成API服务搭建，支持多部门使用",
+      "请补充可量化结果：优化SQL查询性能，降低接口延迟"
+    ],
+    "jd_tone": "结果导向",
+    "layout_valid": true,
+    "layout_warnings": [],
+    "compression_warnings": [],
+    "page_budget": {
+      "budgets": {
+        "total_bullets_budget": 10,
+        "total_chars_budget": 900,
+        "module_ratio": {
+          "core": 0.55,
+          "projects": 0.25,
+          "skills": 0.2
+        },
+        "per_section_char_budget": {
+          "core": 495,
+          "projects": 225,
+          "skills": 180
+        }
+      },
+      "final_usage": {
+        "bullets": 3,
+        "chars": 179,
+        "core_chars": 116,
+        "project_chars": 41
+      }
+    },
+    "line_limit_valid": true,
+    "line_limit_violations": [],
+    "semantic_match": {
+      "industry": "data_ai",
+      "semantic_terms_count": 10,
+      "semantic_terms_preview": [
+        "fastapi",
+        "llm",
+        "mysql",
+        "postgresql",
+        "prompt",
+        "py",
+        "python",
+        "rag",
+        "sql",
+        "大模型"
+      ],
+      "high_alignment_count": 2,
+      "low_alignment_count": 1,
+      "low_alignment_samples": [
+        "搭建智能客服机器人，7天内上线，问题解决率提升30%"
+      ]
+    },
+    "authenticity_check": {
+      "risk_level": "medium",
+      "unsupported_claims": [
+        "可能缺少原文证据支撑: 优化SQL查询性能，降低接口延迟，通过关键路径拆解实现目标交付（结果量化待补充）",
+        "可能缺少原文证据支撑: 搭建智能客服机器人，7天内上线，问题解决率提升30%，通过关键路径拆解实现目标交付"
+      ],
+      "suspicious_metrics": [],
+      "missing_evidence_metrics": [
+        "数值指标未在原文找到直接证据: 搭建智能客服机器人，7天内上线，问题解决率提升30%，通过关键路径拆解实现目标交付"
+      ],
+      "needs_manual_review": true
+    },
+    "ai": {
+      "enabled": false,
+      "provider": "openai",
+      "warnings": []
+    }
+  },
+  "resume": {
+    "basic": {
+      "name": "张三",
+      "phone": "13800138000",
+      "email": "zhangsan@example.com",
+      "target_role": "AI应用工程师"
+    },
+    "core": {
+      "work_experience": [
+        "参与业务推进，包括开发企业知识库问答系统，使用Python与FastAPI完成API服务搭建，支持多部门使用，通过关键路径拆解实现目标交付（结果量化待…",
+        "优化SQL查询性能，降低接口延迟，通过关键路径拆解实现目标交付（结果量化待补充）"
+      ],
+      "ordering_rule": "直接经历 > 间接经历 > 标准能力"
+    },
+    "auxiliary": {
+      "projects": [
+        "搭建智能客服机器人，7天内上线，问题解决率提升30%，通过关键路径拆解实现目标交付"
+      ],
+      "education": [
+        "北京邮电大学 计算机科学与技术 本科"
+      ],
+      "evidence": [
+        {
+          "title": "搭建智能客服机器人，7天内上线，问题解决率提升3",
+          "data_achievement": "7、30%",
+          "background": "搭建智能客服机器人，7天内上线，问题解决率提升30%"
+        }
+      ]
+    },
+    "skills": {
+      "掌握": [
+        "Docker"
+      ],
+      "熟悉": [
+        "Python",
+        "FastAPI",
+        "SQL"
+      ],
+      "精通": []
+    }
+  }
+}
